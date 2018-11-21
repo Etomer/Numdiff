@@ -1,11 +1,12 @@
 function yn=AM3(f,timeStep,y,Fo,ToL,max)
-%Fo ?r en vektor med de n-1 sista funktionsutvecklingarna
+%Fo ar en vektor med de n-1 sista funktionsutvecklingarna
+%Med iterativ del...
 it=0;
 yLast=1;
 ynew=12;
 
 while abs(ynew-yLast)<ToL
-    %bara f?r att se till att den inte totalkrashar datorn och
+    %bara for att se till att den inte totalkrashar datorn och
     %programmet...
     if it<max
 
