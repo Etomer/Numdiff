@@ -1,9 +1,9 @@
 function yn=AM1(f,timeStep,y,Fo,ToL,max)
 it=0;
-yLast=1;
-ynew=12;
+yLast=12;
+ynew=y;
 
-while abs(ynew-yLast)<ToL
+while abs(ynew-yLast)>ToL
     %bara f?r att se till att den inte totalkrashar datorn och
     %programmet...
     if it<max
@@ -11,7 +11,7 @@ while abs(ynew-yLast)<ToL
 
         yLast=ynew;
 
-        ynew = yLast + timeStep.*f(yLast);
+        ynew = y + timeStep.*f(ynew)
 
 
     end
