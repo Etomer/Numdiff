@@ -1,27 +1,3 @@
-function yn=AM2(f,timeStep,y,Fo,k,ToL,max)
-it=0;
-yLast=1;
-ynew=12;
-
-while abs(ynew-yLast)<ToL
-    %bara f?r att se till att den inte totalkrashar datorn och
-    %programmet...
-    if it<max
-
-
-        yLast=ynew;
-
-        ynew = yLast + timeStep.*(f(yLast)+Fo(end))./2;
-
-
-    end
-    
-    if it==max
-        break
-    end
-    it=it+1;
-end
-
-yn=ynew;
-
+function [y_new] = AM2(y_old, f_old, f_pred, h)
+    y_new = y_old + h/2.*(f_pred + f_old(:,end));
 end
